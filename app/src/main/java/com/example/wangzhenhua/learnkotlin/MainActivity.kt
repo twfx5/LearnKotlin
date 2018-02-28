@@ -10,11 +10,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    fun test() {
-        System.out.print("Hello")
-    }
 
-    fun sum(a:Int, b:Int):Int {
-        return a + b
-    }
+
 }
