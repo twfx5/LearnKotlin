@@ -8,7 +8,7 @@ class SimpleClass {
 
     // 定义局部变量
     var a = 3
-    var b : Int = 4
+    var b: Int = 4
     var str = "hello"
 
     fun test() {
@@ -16,7 +16,7 @@ class SimpleClass {
     }
 
     // 定义函数（有int 返回值）
-    fun sum(a: Int, b: Int) : Int {
+    fun sum(a: Int, b: Int): Int {
         return a + b
     }
 
@@ -24,7 +24,7 @@ class SimpleClass {
     fun sum2(a: Int, b: Int) = a + b
 
     // if表达式
-    fun maxOf(a: Int, b: Int) : Int{
+    fun maxOf(a: Int, b: Int): Int {
         if (a < b) {
             return b
         } else {
@@ -33,7 +33,7 @@ class SimpleClass {
     }
 
     // if 表达式 + 表达式作为函数体
-    fun minOf(a: Int, b: Int) = if(a < b) a else b
+    fun minOf(a: Int, b: Int) = if (a < b) a else b
 
 
 }
