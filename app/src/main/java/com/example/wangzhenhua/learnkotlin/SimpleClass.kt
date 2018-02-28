@@ -6,6 +6,10 @@ package com.example.wangzhenhua.learnkotlin
  */
 class SimpleClass {
 
+    // 定义基本变量
+    val i: Int = 3
+
+    // 可修改的变量
     // 定义局部变量
     var a = 3
     var b: Int = 4
