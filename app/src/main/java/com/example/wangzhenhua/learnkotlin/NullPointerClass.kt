@@ -35,7 +35,7 @@ class NullPointerClass {
 //    val l5 = c.length?: -1
 
     // !! 操作符
-    val l5 = c!!.length     //这会返回一个非空的 c 或者抛出一个 c 为空的 NPE
+    val l6 = c!!.length     //这会返回一个非空的 c 或者抛出一个 c 为空的 NPE
 
 
 }
