@@ -8,6 +8,9 @@ import kotlinx.android.synthetic.main.layout_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    // 简化String的写法
+    private val TAG = "MainActivity"
+
 //    private var textView : TextView? = null
 //    private var listView : ListView? = null
 
@@ -21,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.layout_main)
         initView()
         initListView()
+        setListener()
     }
 
     /**
@@ -53,6 +57,19 @@ class MainActivity : AppCompatActivity() {
         listView.adapter = myAdapter
     }
 
-
+    // ListView设置监听器
+    private fun setListener() {
+        listView.setOnItemClickListener { _, _, position, _ ->
+            when (position) {
+                0 -> Toast.makeText(this, list[position], Toast.LENGTH_SHORT).show()
+                1 -> Toast.makeText(this, list[position], Toast.LENGTH_SHORT).show()
+                2 -> Toast.makeText(this, list[position], Toast.LENGTH_SHORT).show()
+                3 -> Toast.makeText(this, list[position], Toast.LENGTH_SHORT).show()
+                4 -> Toast.makeText(this, list[position], Toast.LENGTH_SHORT).show()
+                5 -> Toast.makeText(this, list[position], Toast.LENGTH_SHORT).show()
+                6 -> Toast.makeText(this, list[position], Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
 
 }
