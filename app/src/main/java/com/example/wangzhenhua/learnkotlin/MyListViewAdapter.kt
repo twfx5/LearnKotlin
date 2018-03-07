@@ -10,7 +10,7 @@ import android.widget.TextView
  * Created by wang on 2018/3/1.
  * ListView 的 Adapter
  */
-class MyAdapter (private var context: Context, private var list: ArrayList<String>) : BaseAdapter() {
+class MyListViewAdapter (private var context: Context, private var list: ArrayList<String>) : BaseAdapter() {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val holder : ViewHolder

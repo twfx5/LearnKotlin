@@ -2,6 +2,7 @@ package com.example.wangzhenhua.learnkotlin
 
 import android.app.Activity
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.layout_second.*
@@ -10,7 +11,9 @@ import kotlinx.android.synthetic.main.layout_second.*
  * Created by wang on 2018/3/1.
  * 点击跳转的界面
  */
-class SecondActivity : Activity() , View.OnClickListener{
+class SecondActivity : Activity(){
+
+    private var list : ArrayList<String> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,13 +22,42 @@ class SecondActivity : Activity() , View.OnClickListener{
     }
 
     private fun initView() {
-        textView1.text = "second Activity"
-        textView2.text = "second Activity"
-        textView3.text = "second Activity"
+        list.clear()
+        list.add("second Activity")
+        list.add("second Activity")
+        list.add("second Activity")
+        list.add("second Activity")
 
-        textView1.setOnClickListener(this)
-        textView2.setOnClickListener(this)
-        textView3.setOnClickListener(this)
+        val myRecycleViewAdapter = MyRecycleViewAdapter(this, list)
+
+        rv_second.layoutManager = LinearLayoutManager(baseContext)
+
+        rv_second.adapter = myRecycleViewAdapter
+
+        // 暂时未添加分割线
+
+        // RecycleView 设置监听
+        myRecycleViewAdapter.setOnItemClickListener(object : MyRecycleViewAdapter.OnItemClickListener{
+            override fun onItemClick(view: View, position: Int) {
+                when (position) {
+                    0 -> {
+                        Toast.makeText(baseContext, list[position], Toast.LENGTH_SHORT).show()
+                    }
+                    1 -> {
+                        Toast.makeText(baseContext, list[position], Toast.LENGTH_SHORT).show()
+                    }
+                    2 -> {
+                        Toast.makeText(baseContext, list[position], Toast.LENGTH_SHORT).show()
+                    }
+                    3 -> {
+                        Toast.makeText(baseContext, list[position], Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+
+        })
+
+
     }
 
     /**
@@ -33,16 +65,16 @@ class SecondActivity : Activity() , View.OnClickListener{
      *  重写onClick方法，在方法中操作
      *  这种方式比较麻烦
      */
-    override fun onClick(v: View?) {
-        when (v?.id) {
-            R.id.textView1 ->
-                Toast.makeText(this, "textView1", Toast.LENGTH_SHORT).show()
-
-            R.id.textView2 ->
-                Toast.makeText(this, "textView2", Toast.LENGTH_SHORT).show()
-
-            R.id.textView3 ->
-                Toast.makeText(this, "textView3", Toast.LENGTH_SHORT).show()
-        }
-    }
+//    override fun onClick(v: View?) {
+//        when (v?.id) {
+//            R.id.textView1 ->
+//                Toast.makeText(this, "textView1", Toast.LENGTH_SHORT).show()
+//
+//            R.id.textView2 ->
+//                Toast.makeText(this, "textView2", Toast.LENGTH_SHORT).show()
+//
+//            R.id.textView3 ->
+//                Toast.makeText(this, "textView3", Toast.LENGTH_SHORT).show()
+//        }
+//    }
 }

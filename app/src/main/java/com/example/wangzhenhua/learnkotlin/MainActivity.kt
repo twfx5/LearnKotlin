@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     // 集合的写法
     private var list  = ArrayList<String>()
 
-    private var myAdapter : MyAdapter? = null
+    private var myAdapter : MyListViewAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
             list.add("我是item" + i)
         }
         // 设置适配器
-        myAdapter = MyAdapter(this, list)
+        myAdapter = MyListViewAdapter(this, list)
         listView.adapter = myAdapter
     }
 
