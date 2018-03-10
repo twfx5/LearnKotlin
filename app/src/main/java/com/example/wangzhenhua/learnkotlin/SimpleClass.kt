@@ -55,6 +55,15 @@ class SimpleClass {
         }
     }
 
+    // Kotlin没有三元运算符(condition ? then : else),因为 if 语句可以做到同样的事
+    fun getMin(a: Int, b : Int) : Int {
+        return if (a < b) {
+            a
+        } else {
+            b
+        }
+    }
+
     // if 表达式 + 表达式作为函数体
     fun minOf(a: Int, b: Int) = if (a < b) a else b
 
