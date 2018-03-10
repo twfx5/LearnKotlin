@@ -28,33 +28,38 @@ class SecondActivity : Activity(){
         list.add("second Activity")
         list.add("second Activity")
 
-        val myRecycleViewAdapter = MyRecycleViewAdapter(this, list)
+//        val myRecycleViewAdapter = MyRecycleViewAdapter(this, list)
 
         rv_second.layoutManager = LinearLayoutManager(baseContext)
 
-        rv_second.adapter = myRecycleViewAdapter
+//        rv_second.adapter = myRecycleViewAdapter
+//
+//        // 暂时未添加分割线
+//
+//        // RecycleView 设置监听
+//        myRecycleViewAdapter.setOnItemClickListener(object : MyRecycleViewAdapter.OnItemClickListener{
+//            override fun onItemClick(view: View, position: Int) {
+//                when (position) {
+//                    0 -> {
+//                        Toast.makeText(baseContext, list[position], Toast.LENGTH_SHORT).show()
+//                    }
+//                    1 -> {
+//                        Toast.makeText(baseContext, list[position], Toast.LENGTH_SHORT).show()
+//                    }
+//                    2 -> {
+//                        Toast.makeText(baseContext, list[position], Toast.LENGTH_SHORT).show()
+//                    }
+//                    3 -> {
+//                        Toast.makeText(baseContext, list[position], Toast.LENGTH_SHORT).show()
+//                    }
+//                }
+//            }
 
-        // 暂时未添加分割线
+//        })
 
-        // RecycleView 设置监听
-        myRecycleViewAdapter.setOnItemClickListener(object : MyRecycleViewAdapter.OnItemClickListener{
-            override fun onItemClick(view: View, position: Int) {
-                when (position) {
-                    0 -> {
-                        Toast.makeText(baseContext, list[position], Toast.LENGTH_SHORT).show()
-                    }
-                    1 -> {
-                        Toast.makeText(baseContext, list[position], Toast.LENGTH_SHORT).show()
-                    }
-                    2 -> {
-                        Toast.makeText(baseContext, list[position], Toast.LENGTH_SHORT).show()
-                    }
-                    3 -> {
-                        Toast.makeText(baseContext, list[position], Toast.LENGTH_SHORT).show()
-                    }
-                }
-            }
-
+        rv_second.adapter = MyRecycleViewAdapter2(list, {
+            // 点击事件
+            Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
         })
 
 
